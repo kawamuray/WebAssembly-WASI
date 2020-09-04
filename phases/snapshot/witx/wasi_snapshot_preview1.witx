@@ -491,6 +491,13 @@
     (result $error $errno)
   )
 
+  (@interface func (export "sock_connect")
+    (param $ipv4_addr u32)
+    (param $port u16)
+    (result $error $errno)
+    (result $sock_fd $fd)
+  )
+
   ;;; Receive a message from a socket.
   ;;; Note: This is similar to `recv` in POSIX, though it also supports reading
   ;;; the data into multiple buffers in the manner of `readv`.
